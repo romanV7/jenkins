@@ -11,7 +11,6 @@ pipeline {
       steps {
         sh "ls -la"
         sh "docker -v"
-        sh "sudo chmod 666 /var/run/docker.sock"
         sh "docker build . -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG}"
       }
     }
