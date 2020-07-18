@@ -10,6 +10,7 @@ pipeline {
     stage("Build Docker Image") {
       steps {
         sh "ls -la"
+        sh "docker -v"
         sh "docker build . -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG}"
       }
     }
