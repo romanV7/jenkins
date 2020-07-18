@@ -8,9 +8,7 @@ pipeline {
   stages {
     stage("Build Docker Image") {
       steps {
-        sh "pwd"
-        echo "$HOME"
-        sh "docker build -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG} $HOME/app/"
+        sh "docker build -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG} ./app/"
       }
     }
     stage("Push to DockerHub") {
