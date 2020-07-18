@@ -6,11 +6,6 @@ pipeline {
     DOCKER_DEV = 'romanv7'
   }
   stages {
-    stage("GitHub Checkout") {
-      steps {
-        git credentialsId: "git-creds", url: "https://github.com/romanV7/jenkins"
-      }
-    }
     stage("Build Docker Image") {
       steps {
         sh "pwd"
