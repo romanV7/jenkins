@@ -13,7 +13,7 @@ pipeline {
     }
     stage("Build Docker Image") {
       steps {
-        sh "docker build -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG} ./app/"
+        sh "docker build -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG} -f ./app/"
       }
     }
     stage("Push to DockerHub") {
