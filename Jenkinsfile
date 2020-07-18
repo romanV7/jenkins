@@ -8,6 +8,7 @@ pipeline {
   stages {
     stage("Build Docker Image") {
       steps {
+        sh "ls -la"
         sh "docker build -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG} ./app/"
       }
     }
