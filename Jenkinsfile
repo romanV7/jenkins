@@ -11,7 +11,7 @@ pipeline {
       steps {
         sh "ls -la"
         sh "docker -v"
-        sh "docker build . -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG}"
+        sh "docker build ./app/ -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG}"
       }
     }
     stage("Push to DockerHub") {
