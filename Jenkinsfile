@@ -4,12 +4,13 @@ pipeline {
     DOCKER_TAG = getDockerTag()
     DOCKER_APP = 'nodeapp'
     DOCKER_DEV = 'romanv7'
+    ROOTPATH = 'root/app/'
   }
   stages {
     stage("Build Docker Image") {
       steps {
         sh "ls -la"
-        sh "docker build -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG} ./app/"
+        sh "docker build -t ${DOCKER_DEV}/${DOCKER_APP}:${DOCKER_TAG} ."
       }
     }
     stage("Push to DockerHub") {
