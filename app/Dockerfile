@@ -5,12 +5,14 @@ RUN apk update && \
     apk add npm \
     && rm -rf /var/cache/apk/*
 
-COPY . /src
-
 WORKDIR /src
+
+COPY package.json package-lock.json ./
 
 RUN npm install --production
 
+COPY . .
+
 EXPOSE 3000
 
-CMD node server
+CMD ["node", "server"]
