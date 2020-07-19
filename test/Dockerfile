@@ -5,4 +5,4 @@ RUN apk add --no-cache curl
 COPY docker-entrypoint.sh /
 
 ENTRYPOINT ["/docker-entrypoint.sh"]
-RUN ["chmod", "+x", "/docker-entrypoint.sh"]
+CMD ["chmod", "+x", "/docker-entrypoint.sh"]
